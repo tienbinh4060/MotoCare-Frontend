@@ -47,17 +47,17 @@ src/
 git clone https://github.com/your-username/motocare.git
 
 2. Install dependencies:
-
+```
 npm install
-
+```
 3. Run the project:
-
+```
 ng serve
-
+```
 4. Open in browser:
-
+```
 http://localhost:4200
-
+```
 🔮 Future Improvements
 
 Integrate backend APIs (authentication, database)
