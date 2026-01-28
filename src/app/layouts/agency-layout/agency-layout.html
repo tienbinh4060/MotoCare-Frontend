@@ -1,0 +1,43 @@
+<div class="agency-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <!-- LOGO -->
+    <div class="sidebar-logo">
+      <img
+        src="assets/images/logo.png"
+        alt="MotoCare"
+        class="sidebar-logo-img"
+      />
+    </div>
+
+    <!-- MENU -->
+    <nav class="menu">
+      <a
+        routerLink="/dashboard"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Bảng điều khiển
+      </a>
+
+      <a routerLink="/appointments" routerLinkActive="active">
+        Lịch hẹn
+      </a>
+
+      <a routerLink="/maintenance" routerLinkActive="active">
+        Bảo trì
+      </a>
+
+      <a routerLink="/promotions" routerLinkActive="active">
+        Khuyến mãi
+      </a>
+    </nav>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+  <div class="page-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+</div>

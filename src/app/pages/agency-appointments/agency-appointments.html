@@ -1,0 +1,86 @@
+<div class="page">
+  <h1 class="page-title">Quản lý lịch hẹn</h1>
+
+  <!-- FILTER -->
+  <div class="card filter-card">
+    <div class="filter-item">
+      <label>Lọc theo ngày</label>
+      <input type="date" />
+    </div>
+
+    <div class="filter-item">
+      <label>Lọc theo trạng thái</label>
+      <select>
+        <option>Tất cả trạng thái</option>
+        <option>Chưa giải quyết</option>
+        <option>Đã xác nhận</option>
+        <option>Hoàn thành</option>
+        <option>Đã huỷ</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="card table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Mã số cuộc hẹn</th>
+          <th>Tên khách hàng</th>
+          <th>Số điện thoại</th>
+          <th>Biển số xe</th>
+          <th>Thời gian hẹn</th>
+          <th>Trạng thái</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let a of appointments">
+          <td>{{ a.id }}</td>
+          <td>{{ a.name }}</td>
+          <td>{{ a.phone }}</td>
+          <td>{{ a.plate }}</td>
+          <td>
+            {{ a.date }}<br />
+            {{ a.time }}
+          </td>
+          <td>
+            <span class="status" [ngClass]="a.status">
+              {{ a.statusText }}
+            </span>
+          </td>
+          <td class="actions">
+            <!-- 👁 Chi tiết -->
+            <a
+              class="icon-btn icon-eye"
+              [routerLink]="['/appointments', a.id]"
+            >
+              <img src="assets/icons/eye.svg" alt="Xem chi tiết" />
+            </a>
+
+            <!-- ✔ Xác nhận -->
+            <button
+              *ngIf="a.status === 'pending'"
+              class="icon success"
+              (click)="confirmAppointment(a)"
+              title="Xác nhận"
+            >
+              ✔
+            </button>
+
+            <!-- ✖ Huỷ -->
+            <button
+              *ngIf="a.status !== 'done'"
+              class="icon danger"
+              (click)="cancelAppointment(a)"
+              title="Huỷ"
+            >
+              ✖
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

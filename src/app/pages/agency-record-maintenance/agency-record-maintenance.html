@@ -1,0 +1,52 @@
+<div class="page maintenance-new-page">
+  <!-- HEADER -->
+  <div class="page-header">
+    <a class="back-btn" routerLink="/maintenance">
+      <img src="assets/icons/arrow-left.svg" alt="Quay lại" />
+    </a>
+    <h1 class="page-title">Hồ sơ bảo trì mới</h1>
+  </div>
+
+  <h2 class="section-title">Ghi nhận bảo trì mới</h2>
+
+  <div class="card form-card">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Phương tiện giao thông</label>
+        <input placeholder="Chọn một phương tiện" />
+      </div>
+
+      <div class="form-group">
+        <label>Loại bảo trì</label>
+        <select>
+          <option>Chọn loại bảo trì</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Số dặm hiện tại (km)</label>
+        <input placeholder="Nhập số dặm hiện tại" />
+      </div>
+
+      <div class="form-group">
+        <label>Ngày bảo trì</label>
+        <input type="date" />
+      </div>
+
+      <div class="form-group full">
+        <label>Ghi chú</label>
+        <textarea placeholder="Ghi chú thêm bất kì thông tin nào khác"></textarea>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn primary" (click)="submit()">Lưu hồ sơ</button>
+      <button class="btn cancel" (click)="cancel()">Huỷ</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" *ngIf="showToast">
+    Ghi nhận bảo trì thành công
+  </div>
+</div>

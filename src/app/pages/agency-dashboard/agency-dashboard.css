@@ -1,0 +1,142 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+.dashboard {
+  padding: var(--space-xl);
+}
+
+/* Header (title + action nếu có) */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+/* Page title */
+.page-title {
+  font-size: var(--text-page-title);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-lg);
+}
+
+/* =========================
+   SUMMARY CARDS
+========================= */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* =========================
+   CARD (CHUẨN FIGMA)
+========================= */
+.card,
+.table-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);          /* 👈 FIX DÍNH MÉP */
+  box-shadow: var(--shadow-card);
+}
+
+/* Card title */
+.card-title {
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-sm);
+}
+
+/* Card value */
+.card-value {
+  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+/* Card sub text */
+.card-sub {
+  font-size: var(--text-small);
+  color: var(--color-text-sub);
+}
+
+/* =========================
+   TABLE
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-sub);
+  padding-bottom: var(--space-sm);
+}
+
+tbody td {
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-body);
+}
+
+/* =========================
+   STATUS
+========================= */
+.status {
+  font-weight: var(--font-weight-medium);
+}
+
+.status.pending {
+  color: var(--color-danger);
+}
+
+.status.success {
+  color: var(--color-primary);
+}
+
+.status.done {
+  color: var(--color-text-sub);
+}
+
+/* =========================
+   ACTIONS
+========================= */
+.actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn.primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn.success {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn.danger {
+  background: var(--color-danger);
+  color: var(--color-white);
+}

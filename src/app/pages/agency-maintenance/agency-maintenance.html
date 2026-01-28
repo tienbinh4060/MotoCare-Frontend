@@ -1,0 +1,40 @@
+<div class="page maintenance-page">
+  <!-- HEADER -->
+  <div class="page-header">
+    <h1 class="page-title">Lịch sử bảo trì</h1>
+
+    <a
+      class="btn btn-add"
+      routerLink="/maintenance/new"
+    >
+      + Ghi nhận bảo trì mới
+    </a>
+  </div>
+
+  <!-- TABLE CARD -->
+  <div class="card table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Ngày</th>
+          <th>Tên khách hàng</th>
+          <th>Biển số xe</th>
+          <th>Loại bảo trì</th>
+          <th>Số dặm</th>
+          <th>Ngày đến hạn tiếp theo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let h of histories">
+          <td>{{ h.date }}</td>
+          <td>{{ h.customerName }}</td>
+          <td>{{ h.vehiclePlate }}</td>
+          <td>{{ h.serviceType }}</td>
+          <td>{{ h.mileage }}</td>
+          <td>{{ h.nextDue || '-' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

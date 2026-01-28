@@ -1,0 +1,124 @@
+<div class="page" *ngIf="appointment">
+
+  <!-- HEADER + BACK -->
+  <div class="page-header">
+    <button class="back-btn" (click)="goBack()">
+      <img src="assets/icons/arrow-left.svg" alt="Quay lại" />
+    </button>
+
+    <h1 class="page-title">Chi tiết cuộc hẹn</h1>
+  </div>
+
+  <!-- HEADER CARD -->
+  <div class="card header-card">
+    <h2>Cuộc hẹn {{ appointment.id }}</h2>
+
+    <span class="status" [ngClass]="appointment.status">
+      {{
+        appointment.status === 'confirmed'
+          ? 'Đã xác nhận'
+          : appointment.status === 'pending'
+          ? 'Chưa giải quyết'
+          : appointment.status === 'done'
+          ? 'Hoàn thành'
+          : 'Đã huỷ'
+      }}
+    </span>
+  </div>
+
+  <!-- CUSTOMER + VEHICLE -->
+  <div class="info-grid">
+    <div class="card info-card">
+      <h3>Thông tin khách hàng</h3>
+
+      <div class="info-item">
+        <span>Tên khách hàng</span>
+        <strong>{{ appointment.customerName }}</strong>
+      </div>
+
+      <div class="info-item">
+        <span>Số điện thoại</span>
+        <strong>{{ appointment.phone }}</strong>
+      </div>
+
+      <div class="info-item">
+        <span>Email</span>
+        <strong>{{ appointment.email }}</strong>
+      </div>
+    </div>
+
+    <div class="card info-card">
+      <h3>Thông tin xe</h3>
+
+      <div class="info-item">
+        <span>Thương hiệu</span>
+        <strong>{{ appointment.brand }}</strong>
+      </div>
+
+      <div class="info-item">
+        <span>Model</span>
+        <strong>{{ appointment.model }}</strong>
+      </div>
+
+      <div class="info-item">
+        <span>Biển số xe</span>
+        <strong>{{ appointment.plate }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPOINTMENT INFO -->
+  <div class="card appointment-info">
+    <h3>Thông tin cuộc hẹn</h3>
+
+    <div class="appointment-grid">
+      <div>
+        <span>Ngày hẹn</span>
+        <strong>{{ appointment.date }}</strong>
+      </div>
+
+      <div>
+        <span>Thời gian</span>
+        <strong>{{ appointment.time }}</strong>
+      </div>
+
+      <div>
+        <span>Trạng thái</span>
+        <span class="status" [ngClass]="appointment.status">
+          {{
+            appointment.status === 'confirmed'
+              ? 'Đã xác nhận'
+              : appointment.status === 'pending'
+              ? 'Chưa giải quyết'
+              : appointment.status === 'done'
+              ? 'Hoàn thành'
+              : 'Đã huỷ'
+          }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="card actions-card">
+    <h3>Hành động</h3>
+
+    <div class="action-buttons">
+      <button
+        class="btn primary"
+        *ngIf="appointment.status === 'confirmed'"
+        (click)="markDone()"
+      >
+        Đánh dấu hoàn thành
+      </button>
+
+      <button
+        class="btn danger"
+        *ngIf="appointment.status !== 'cancel'"
+        (click)="cancelAppointment()"
+      >
+        Huỷ cuộc hẹn
+      </button>
+    </div>
+  </div>
+</div>

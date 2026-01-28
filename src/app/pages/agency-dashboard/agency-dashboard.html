@@ -1,0 +1,89 @@
+<div class="dashboard">
+
+  <!-- Page title -->
+  <h1 class="page-title">Bảng điều khiển đại lý</h1>
+
+  <!-- Summary cards -->
+  <div class="summary-cards">
+    <div class="card">
+      <p class="card-title">Lịch hẹn hôm nay</p>
+      <p class="card-value">15</p>
+      <p class="card-sub">Lịch hẹn trong ngày</p>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Lịch hẹn chờ xác nhận</p>
+      <p class="card-value">5</p>
+      <p class="card-sub">Đang chờ xác nhận</p>
+    </div>
+
+    <div class="card">
+      <p class="card-title">Dịch vụ đã hoàn thành</p>
+      <p class="card-value">22</p>
+      <p class="card-sub">Dịch vụ hoàn thành trong tuần</p>
+    </div>
+  </div>
+
+  <!-- Today appointments -->
+  <div class="table-card">
+    <h2 class="section-title">Lịch hẹn hôm nay</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tên khách hàng</th>
+          <th>Biển số xe</th>
+          <th>Giờ hẹn</th>
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.customerName }}</td>
+          <td>{{ appointment.plate }}</td>
+          <td>{{ appointment.time }}</td>
+          <td>
+            <span class="status" [ngClass]="appointment.status">
+              {{
+                appointment.status === 'pending'
+                  ? 'Chờ xác nhận'
+                  : appointment.status === 'confirmed'
+                  ? 'Đã xác nhận'
+                  : 'Hoàn thành'
+              }}
+            </span>
+          </td>
+          <td class="actions">
+            <!-- Chi tiết -->
+            <button
+              class="btn primary"
+              [routerLink]="['/appointments', appointment.id]"
+            >
+              Chi tiết
+            </button>
+
+            <!-- Xác nhận -->
+            <button
+              *ngIf="appointment.status === 'pending'"
+              class="btn success"
+              (click)="confirmAppointment(appointment)"
+            >
+              Xác nhận
+            </button>
+
+            <!-- Huỷ -->
+            <button
+              class="btn danger"
+              (click)="cancelAppointment(appointment)"
+            >
+              Huỷ
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

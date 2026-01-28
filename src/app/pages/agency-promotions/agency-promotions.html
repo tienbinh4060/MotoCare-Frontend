@@ -1,0 +1,67 @@
+<div class="page promotions-page">
+  <!-- NỀN XÁM MỜ -->
+  <div class="page-bg">
+
+    <!-- HEADER -->
+    <div class="page-header">
+      <h1 class="page-title">Khuyến mãi</h1>
+
+      <button class="btn primary" (click)="addPromotion()">
+        + Thêm khuyến mãi
+      </button>
+    </div>
+
+    <!-- TABLE CARD -->
+    <div class="card table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Mã</th>
+            <th>Tên khuyến mãi</th>
+            <th>Mô tả</th>
+            <th>Giảm giá</th>
+            <th>Thời gian</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let p of promotions">
+            <td>{{ p.id }}</td>
+            <td>{{ p.title }}</td>
+            <td>{{ p.description }}</td>
+            <td class="discount">{{ p.discount }}</td>
+            <td>
+              {{ p.startDate }}<br />
+              → {{ p.endDate }}
+            </td>
+            <td>
+              <span class="status" [ngClass]="p.status">
+                {{ getStatusText(p.status) }}
+              </span>
+            </td>
+            <td class="actions">
+              <button
+                class="icon-btn view"
+                (click)="viewPromotion(p)"
+                title="Xem chi tiết"
+              >
+                👁
+              </button>
+
+              <button
+                class="icon-btn delete"
+                (click)="deletePromotion(p)"
+                title="Xoá"
+              >
+                ✕
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

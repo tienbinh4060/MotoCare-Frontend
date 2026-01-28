@@ -1,0 +1,217 @@
+.page {
+  padding: 32px;
+  background: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* BACK */
+.page-header {
+  margin-bottom: 12px;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #374151;
+}
+
+.btn-back:hover {
+  text-decoration: underline;
+}
+
+/* TITLE */
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* CARD */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 28px;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* HEADER */
+.header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.info-card h3 {
+  margin-bottom: 16px;
+}
+
+.info-item {
+  margin-bottom: 14px;
+}
+
+.info-item span {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.info-item strong {
+  font-size: 16px;
+}
+
+/* APPOINTMENT INFO */
+.appointment-info h3 {
+  margin-bottom: 20px;
+}
+
+.appointment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.appointment-grid span {
+  font-size: 14px;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.appointment-grid strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ACTIONS */
+.actions-card h3 {
+  margin-bottom: 16px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+/* BUTTON */
+.btn {
+  border-radius: 999px;
+  padding: 12px 22px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: #32bc9b;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #28a98a;
+}
+
+.btn.danger {
+  background: #9ca3af;
+  color: #fff;
+}
+
+.btn.danger:hover {
+  background: #6b7280;
+}
+
+/* STATUS */
+/* STATUS BADGE */
+.status {
+  display: inline-flex;        /* 👈 QUAN TRỌNG: ôm chữ */
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+
+  white-space: nowrap;         /* 👈 không xuống dòng */
+  width: fit-content;          /* 👈 ôm đúng nội dung */
+}
+
+/* Đã xác nhận */
+.status.confirmed {
+  background: #32bc9b;
+  color: #ffffff;
+}
+
+/* Hoàn thành */
+.status.done {
+  background: #32bc9b;
+  color: #ffffff;
+}
+
+/* Chưa giải quyết */
+.status.pending {
+  background: #ff784b;
+  color: #ffffff;
+}
+
+/* Đã huỷ */
+.status.cancel {
+  background: #9ca3af;
+  color: #ffffff;
+}
+td .status {
+  margin-left: 0;
+}
+
+
+/* ===== HEADER WITH BACK BUTTON ===== */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Back button (giống maintenance-new) */
+.back-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+.back-btn:hover {
+  transform: translateX(-2px);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.06);
+}
+  
