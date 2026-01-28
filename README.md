@@ -22,6 +22,7 @@ MotoCare is a web-based agency management system designed to support motorcycle 
 - **Data:** Mock data (temporary, frontend-only)
 
 ## 📂 Project Structure
+```bash
 src/
 ├── app/
 │ ├── layouts/
@@ -39,11 +40,10 @@ src/
 ├── assets/
 │ ├── images/
 │ └── icons/
-
+```bash
 ## ▶️ Getting Started
 
 1. Clone the repository:
-```bash
 git clone https://github.com/your-username/motocare.git
 
 2. Install dependencies:
