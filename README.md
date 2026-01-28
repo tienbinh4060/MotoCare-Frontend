@@ -1,59 +1,80 @@
-# MotoCare
+# MotoCare – Agency Management System (Frontend)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
+MotoCare is a web-based agency management system designed to support motorcycle service centers in managing appointments, maintenance records, and promotional programs. This project was developed as part of a university group assignment, focusing on building a clean, consistent, and scalable frontend application based on real-world business workflows. The system provides core features such as agency dashboard analytics, appointment management with detailed views and status handling, maintenance history tracking and new maintenance record creation, and promotion management with basic interactions (view and delete). The frontend is implemented using Angular with standalone components, following modular architecture, reusable UI patterns, and enterprise-style UI/UX aligned with Figma designs. Currently, the project uses mock data to simulate backend behavior and is prepared for future backend API integration.
 
-## Development server
+## 🚀 Key Features
 
-To start a local development server, run:
+- Agency dashboard with summary statistics and today's appointments
+- Appointment management (list, detail view, status actions)
+- Maintenance management (history view, create new maintenance record)
+- Promotion management (view details, delete with confirmation)
+- Responsive layout with reusable components
+- UI/UX designed according to Figma mockups
+- Mock data structure ready for backend integration
 
+## 🛠 Tech Stack
+
+- **Framework:** Angular
+- **Language:** TypeScript
+- **Styling:** CSS (custom, Figma-aligned)
+- **Architecture:** Standalone Components
+- **Routing:** Angular Router
+- **Data:** Mock data (temporary, frontend-only)
+
+## 📂 Project Structure
+src/
+├── app/
+│ ├── layouts/
+│ │ └── agency-layout/
+│ ├── pages/
+│ │ ├── agency-dashboard/
+│ │ ├── agency-appointments/
+│ │ ├── agency-appointment-detail/
+│ │ ├── agency-maintenance/
+│ │ ├── agency-record-maintenance/
+│ │ └── agency-promotions/
+│ ├── data/
+│ │ └── appointments.mock.ts
+│ └── app.routes.ts
+├── assets/
+│ ├── images/
+│ └── icons/
+
+## ▶️ Getting Started
+
+1. Clone the repository:
 ```bash
+git clone https://github.com/your-username/motocare.git
+
+2. Install dependencies:
+
+npm install
+
+3. Run the project:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open in browser:
 
-## Code scaffolding
+http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+🔮 Future Improvements
 
-```bash
-ng generate component component-name
-```
+Integrate backend APIs (authentication, database)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Implement real CRUD operations
 
-```bash
-ng generate --help
-```
+Add role-based access control
 
-## Building
+Improve form validation and error handling
 
-To build the project run:
+Add notification service (toast / snackbar)
 
-```bash
-ng build
-```
+👨‍💻 Author
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Developed by a university student as part of a group software engineering project.
+Frontend implementation and UI logic were the main responsibilities.
 
-## Running unit tests
+📄 License
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is for educational purposes only.
